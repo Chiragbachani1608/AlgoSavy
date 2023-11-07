@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Searching Algorithms</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Searching Algorithms</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dsa_topics.html">DSA Topics</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="topic-section">
+        <h2>Introduction to Searching Algorithms</h2>
+        <p>Searching algorithms are used to find the presence and position of an element in a collection of data...</p>
+    </section>
+
+    <section class="topic-section">
+        <h2>Common Searching Algorithms</h2>
+        <p>Explore different searching algorithms such as Binary Search, Linear Search, and more...</p>
+    </section>
+
+    <section class="implementation-section">
+        <h2>Implementing Searching Algorithms in Python</h2>
+        <p>In Python, you can implement searching algorithms to find elements in arrays or lists. Here's an example of Binary Search:</p>
+        <pre>
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = left + (right - left) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+        </pre>
+        <p>You can create functions for other searching algorithms in a similar way.</p>
+    </section>
+
+    <section class="quiz-section">
+        <h2>Quiz</h2>
+        <p>Test your knowledge with this simple quiz:</p>
+        <form>
+            <p>Which searching algorithm requires the collection of data to be sorted?</p>
+            <input type="radio" name="q1" value="a"> Binary Search<br>
+            <input type="radio" name="q1" value="b"> Linear Search<br>
+            <input type="radio" name="q1" value="c"> Quick Search<br>
+            <input type="radio" name="q1" value="d"> None of the above<br>
+            <button class="cta-button" type="button" onclick="checkAnswer()">Submit</button>
+        </form>
+        <p id="feedback"></p>
+    </section>
+
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="q1"]:checked').value;
+            var feedbackMessage = document.getElementById("feedback");
+
+            if (selectedAnswer === "a") {
+                feedbackMessage.innerHTML = "Correct! Binary Search requires the collection of data to be sorted.";
+            } else {
+                feedbackMessage.innerHTML = "Oops, that's not correct. Try again.";
+            }
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2023 DSA Learning</p>
+    </footer>
+</body>
+</html>

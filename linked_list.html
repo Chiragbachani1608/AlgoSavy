@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Linked Lists</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Additional styles for this page */
+        .coding-example {
+            display: none;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Linked Lists</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dsa_topics.html">DSA Topics</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="topic-section">
+        <h2>Introduction to Linked Lists</h2>
+        <p>A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence. Linked lists are used to implement various data structures and algorithms and provide dynamic memory allocation.</p>
+    </section>
+
+    <section class="benefits-section">
+        <h2>Advantages of Linked Lists</h2>
+        <p>Linked lists offer several advantages, including:</p>
+        <ul>
+            <li><strong>Dynamic Size:</strong> Linked lists can grow or shrink in size as needed.</li>
+            <li><strong>Efficient Insertions and Deletions:</strong> Insertions and deletions at the beginning or in the middle of a linked list are efficient.</li>
+            <li><strong>No Wasted Memory:</strong> Linked lists only use as much memory as required, minimizing wasted space.</li>
+            <li><strong>Support for Various Data Types:</strong> Linked lists can store elements of different data types in the same list.</li>
+        </ul>
+    </section>
+
+    <section class="coding-examples">
+        <h2>Coding Linked Lists in Different Languages</h2>
+        <button class="language-button" id="pythonButton">Python</button>
+        <button class="language-button" id="cppButton">C++</button>
+        <button class "language-button" id="javaButton">Java</button>
+
+        <div class="coding-example" id="pythonCode">
+            <h3>Python:</h3>
+            <pre>
+# Python code example for linked list
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Add methods for operations on linked lists
+            </pre>
+        </div>
+
+        <div class="coding-example" id="cppCode">
+            <h3>C++:</h3>
+            <pre>
+// C++ code example for linked list
+#include <iostream>
+
+class Node {
+public:
+    int data;
+    Node* next;
+};
+
+class LinkedList {
+public:
+    Node* head;
+    
+    // Add methods for operations on linked lists
+};
+            </pre>
+        </div>
+
+        <div class="coding-example" id="javaCode">
+            <h3>Java:</h3>
+            <pre>
+// Java code example for linked list
+class Node {
+    int data;
+    Node next;
+}
+
+class LinkedList {
+    Node head;
+    
+    // Add methods for operations on linked lists
+}
+            </pre>
+        </div>
+    </section>
+
+    <section class="quiz-section">
+        <h2>Quiz</h2>
+        <form>
+            <div class="quiz-question">
+                <p>What is a linked list primarily used for?</p>
+                <input type="radio" name="q1" value="a"> Storing elements of different data types<br>
+                <input type="radio" name="q1" value="b"> Efficiently performing search operations<br>
+                <input type="radio" name="q1" value="c"> Implementing data structures and algorithms<br>
+                <input type="radio" name="q1" value="d"> Minimizing memory usage<br>
+            </div>
+            <div class="quiz-question">
+                <p>What is the key advantage of linked lists over arrays?</p>
+                <input type="radio" name="q2" value="a"> Constant-time access to elements<br>
+                <input type="radio" name="q2" value="b"> Dynamic size and efficient insertions<br>
+                <input type="radio" name="q2" value="c"> Fixed size for predictable memory usage<br>
+                <input type="radio" name="q2" value="d"> Built-in sorting and searching algorithms<br>
+            </div>
+            <div class="quiz-question">
+                <p>In which programming language are linked lists commonly implemented?</p>
+                <input type="radio" name="q3" value="a"> Python<br>
+                <input type="radio" name="q3" value="b"> C++<br>
+                <input type="radio" name="q3" value="c"> Java<br>
+                <input type="radio" name="q3" value="d"> All of the above<br>
+            </div>
+            <div class="quiz-question">
+                <p>What is a node in a linked list?</p>
+                <input type="radio" name="q4" value="a"> A type of sorting algorithm<br>
+                <input type="radio" name="q4" value="b"> A unit of data that stores the linked list's elements<br>
+                <input type="radio" name="q4" value="c"> A keyword in programming languages<br>
+                <input type="radio" name="q4" value="d"> An element of an array<br>
+            </div>
+            <div class="quiz-question">
+                <p>What is the primary purpose of a head node in a linked list?</p>
+                <input type="radio" name="q5" value="a"> Storing the last element of the list<br>
+                <input type="radio" name="q5" value="b"> Providing quick access to any element in the list<br>
+                <input type="radio" name="q5" value="c"> Storing the size of the list<br>
+                <input type="radio" name="q5" value="d"> Pointing to the first element of the list<br>
+            </div>
+            <button class="cta-button" type="button" onclick="checkAnswers()">Submit</button>
+        </form>
+        <p id="feedback"></p>
+    </section>
+
+    <script>
+        // Function to toggle the display of code examples based on the selected language
+        function showCodeExample(language) {
+            var codingExamples = document.querySelectorAll(".coding-example");
+            for (var i = 0; i < codingExamples.length; i++) {
+                codingExamples[i].style.display = "none";
+            }
+            document.getElementById(language + "Code").style.display = "block";
+        }
+
+        // Attach event listeners to the language buttons
+        document.getElementById("pythonButton").addEventListener("click", function () {
+            showCodeExample("python");
+        });
+        document.getElementById("cppButton").addEventListener("click", function () {
+            showCodeExample("cpp");
+        });
+        document.getElementById("javaButton").addEventListener("click", function () {
+            showCodeExample("java");
+        });
+
+        function checkAnswers() {
+            var feedbackMessage = document.getElementById("feedback");
+            var answers = document.querySelectorAll('input[name^="q"]');
+            var correctAnswers = ["c", "b", "d", "b", "d"];
+            var score = 0;
+
+            for (var i = 0; i < answers.length; i++) {
+                if (answers[i].checked && answers[i].value === correctAnswers[i]) {
+                    score++;
+                }
+            }
+
+            feedbackMessage.innerHTML = "You got " + score + " out of 5 questions correct.";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2023 DSA Learning</p>
+    </footer>
+</body>
+</html>

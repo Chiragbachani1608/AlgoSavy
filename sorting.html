@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting Algorithms</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sorting Algorithms</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dsa_topics.html">DSA Topics</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="topic-section">
+        <h2>Introduction to Sorting Algorithms</h2>
+        <p>Sorting algorithms are used to rearrange data in a specific order. They are fundamental in computer science...</p>
+    </section>
+
+    <section class="topic-section">
+        <h2>Common Sorting Algorithms</h2>
+        <p>Explore different sorting algorithms such as Bubble Sort, Quick Sort, Merge Sort, and more...</p>
+    </section>
+
+    <section class="implementation-section">
+        <h2>Implementing Sorting Algorithms in Python</h2>
+        <p>In Python, you can implement sorting algorithms to sort arrays and lists. Here's an example of the Bubble Sort algorithm:</p>
+        <pre>
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+        </pre>
+        <p>You can create functions for other sorting algorithms in a similar way.</p>
+    </section>
+
+    <section class="quiz-section">
+        <h2>Quiz</h2>
+        <p>Test your knowledge with this simple quiz:</p>
+        <form>
+            <p>Which sorting algorithm is known for its worst-case time complexity of O(n^2)?</p>
+            <input type="radio" name="q1" value="a"> Quick Sort<br>
+            <input type="radio" name="q1" value="b"> Merge Sort<br>
+            <input type="radio" name="q1" value="c"> Bubble Sort<br>
+            <input type="radio" name="q1" value="d"> Insertion Sort<br>
+            <button class="cta-button" type="button" onclick="checkAnswer()">Submit</button>
+        </form>
+        <p id="feedback"></p>
+    </section>
+
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="q1"]:checked').value;
+            var feedbackMessage = document.getElementById("feedback");
+
+            if (selectedAnswer === "c") {
+                feedbackMessage.innerHTML = "Correct! Bubble Sort is known for its worst-case time complexity of O(n^2).";
+            } else {
+                feedbackMessage.innerHTML = "Oops, that's not correct. Try again.";
+            }
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2023 DSA Learning</p>
+    </footer>
+</body>
+</html>
