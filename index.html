@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AlgoSavy - Learn Data Structures and Algorithms</title>
+    <title>AlgoSavy</title>
     <style>
-        /* Basic styling for the website */
+        /* CSS styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -38,84 +38,105 @@
             color: #fff;
         }
 
-        .course-title {
+        .enroll-title {
             font-size: 36px;
             text-align: center;
             color: #007acc;
-            animation: bounce 2s infinite;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
+        /* JavaScript animation */
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
             }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
+            100% {
+                opacity: 1;
             }
         }
 
-        section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #f5f5f5;
+        header {
+            animation: fade-in 2s ease-in-out;
         }
 
-        h2 {
-            font-size: 24px;
-            margin: 0;
-        }
-
-        .cta-button {
-            background-color: #007acc;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
-            display: inline-block;
-        }
-
-        footer {
-            background-color: #2d2d2d;
-            color: #fff;
+        .quiz-section {
             text-align: center;
-            padding: 10px;
+            padding: 20px;
+        }
+
+        .quiz-question {
+            font-size: 24px;
+        }
+
+        .quiz-buttons {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1 class="course-title">AlgoSavy - Learn Data Structures and Algorithms</h1>
+        <h1 class="enroll-title">Enroll in Premium DSA Course</h1>
     </header>
 
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="dsa_topics.html">DSA Topics</a></li>
-            <li><a href="coding_concepts.html">Coding Concepts</a></li>
-            <li><a href="choose_language.html">Choose Your Language</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="paid.html">Paid Course</a></li>
         </ul>
     </nav>
 
-    <section class="main-section">
-        <h2>Explore Data Structures and Algorithms</h2>
-        <p>Enhance your coding skills with our comprehensive DSA courses.</p>
-        <a class="cta-button" href="dsa_topics.html">Learn More about DSA Topics</a>
-        <a class="cta-button" href="coding_concepts.html">Discover Basic Coding Concepts</a>
+    <section class="topic-section">
+        <h2>Welcome to AlgoSavy</h2>
+        <p>Welcome to AlgoSavy, your ultimate destination for learning Data Structures and Algorithms. Whether you are a beginner or an experienced coder, we have something for everyone. Dive into the world of algorithms, ace your coding interviews, and master the art of problem-solving.</p>
     </section>
 
     <section class="paid-course-section">
-        <h2>Premium DSA Course</h2>
-        <p>Take your DSA skills to the next level with our paid course.</p>
-        <a class="cta-button" href="paid.html">Learn More</a>
+        <h2>Ready to Learn More?</h2>
+        <p>Take your DSA skills to the next level with our premium DSA courses, taught by Grandmaster Dhrumil Tandel. Our courses provide in-depth knowledge, hands-on coding exercises, and personalized guidance to help you excel in your coding journey.</p>
+        <p><strong>Join our paid DSA course today and unlock the full potential of your coding skills!</strong></p>
+        <a class="cta-button" href="enroll.html">Enroll Now</a>
     </section>
 
+    <section class="quiz-section">
+        <h2>Quiz: Do You Know Coding?</h2>
+        <p class="quiz-question">Do you know coding?</p>
+        <div class="quiz-buttons">
+            <button onclick="answerQuestion(true)">Yes</button>
+            <button onclick="answerQuestion(false)">No</button>
+        </div>
+        <p id="quiz-feedback"></p>
+        <p id="percentage-result"></p>
+    </section>
+
+    <section class="contest-section">
+        <h2>Participate in Our Coding Contest</h2>
+        <p>Test your coding skills and compete with other participants in our exclusive coding contest. Solve challenging problems, demonstrate your algorithmic expertise, and win exciting prizes.</p>
+        <p>Don't miss this opportunity to showcase your talent and learn from the best in the field.</p>
+        <a class="cta-button" href="contest.html">Learn More</a>
+    </section>
+    
     <footer>
         <p>&copy; 2023 AlgoSavy</p>
     </footer>
+
+    <script>
+        let yesCount = 0;
+        let noCount = 0;
+
+        function answerQuestion(isYes) {
+            if (isYes) {
+                yesCount++;
+            } else {
+                noCount++;
+            }
+
+            const totalVotes = yesCount + noCount;
+            const percentageYes = (yesCount / totalVotes) * 100;
+
+            document.getElementById('quiz-feedback').innerText = 'Thanks for your response!';
+            document.getElementById('percentage-result').innerText = `Percentage who know coding: ${percentageYes.toFixed(2)}%`;
+        }
+    </script>
 </body>
 </html>
