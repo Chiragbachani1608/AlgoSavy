@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Linked Lists</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        /* Additional styles for this page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2d2d2d;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .topic-section, .benefits-section, .coding-examples, .quiz-section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        ul {
+            margin-top: 0;
+        }
+
+        .language-button {
+            background-color: #007acc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         .coding-example {
             display: none;
             border: 1px solid #ccc;
@@ -13,6 +68,30 @@
             padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #007acc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #feedback {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #2d2d2d;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
@@ -47,9 +126,9 @@
 
     <section class="coding-examples">
         <h2>Coding Linked Lists in Different Languages</h2>
-        <button class="language-button" id="pythonButton">Python</button>
-        <button class="language-button" id="cppButton">C++</button>
-        <button class "language-button" id="javaButton">Java</button>
+        <button class="language-button" id="pythonButton" onclick="showCodeExample('python')">Python</button>
+        <button class="language-button" id="cppButton" onclick="showCodeExample('cpp')">C++</button>
+        <button class="language-button" id="javaButton" onclick="showCodeExample('java')">Java</button>
 
         <div class="coding-example" id="pythonCode">
             <h3>Python:</h3>
@@ -72,7 +151,7 @@ class LinkedList:
             <h3>C++:</h3>
             <pre>
 // C++ code example for linked list
-#include <iostream>
+#include &lt;iostream&gt;
 
 class Node {
 public:
@@ -159,17 +238,6 @@ class LinkedList {
             }
             document.getElementById(language + "Code").style.display = "block";
         }
-
-        // Attach event listeners to the language buttons
-        document.getElementById("pythonButton").addEventListener("click", function () {
-            showCodeExample("python");
-        });
-        document.getElementById("cppButton").addEventListener("click", function () {
-            showCodeExample("cpp");
-        });
-        document.getElementById("javaButton").addEventListener("click", function () {
-            showCodeExample("java");
-        });
 
         function checkAnswers() {
             var feedbackMessage = document.getElementById("feedback");
